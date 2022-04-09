@@ -42,7 +42,7 @@ Python3 должен быть уже установлен. Затем испол
 
 Пример использования
 
-	>>>import main.py
+	>>>from main.py import shorten_link
 	>>>headers = {"Authorization": "Bearer {}".format("a45a8a4859db0ca7902f4915434fa9ef0943576h")}
 	>>>url = "https://dvmn.org"
 	>>>print(shorten_link(headers, url))
@@ -60,7 +60,7 @@ Python3 должен быть уже установлен. Затем испол
 
 Пример использования
 
-	>>>import main.py
+	>>>from main.py import count_clicks
 	>>>headers = {"Authorization": "Bearer {}".format("a45a8a4859db0ca7902f4915434fa9ef0943576h")}
 	>>>url = "https://bit.ly/38t3s3b"
 	>>>print("По вашей ссылке прошли {} раза".format(count_clicks(headers, url))
@@ -78,7 +78,7 @@ Python3 должен быть уже установлен. Затем испол
 
 Пример использования
 
-	>>>import main.py
+	>>>from main.py import is_bitlink
 	>>>headers = {"Authorization": "Bearer {}".format("a45a8a4859db0ca7902f4915434fa9ef0943576h")}
 	>>>url = "https://bit.ly/38t3s3b"
 	>>>print(is_bitlink(headers, url))
