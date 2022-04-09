@@ -42,7 +42,7 @@ Python3 должен быть уже установлен. Затем испол
 
 Пример использования
 
-	>>>import **main.py**
+	>>>import main.py
 	>>>headers = {"Authorization": "Bearer {}".format("a45a8a4859db0ca7902f4915434fa9ef0943576h")}
 	>>>url = "https://dvmn.org"
 	>>>print(shorten_link(headers, url))
@@ -58,6 +58,14 @@ Python3 должен быть уже установлен. Затем испол
 
 **bitlink** - "битлинк" в формате `https://bit.ly/38t3s3b`
 
+Пример использования
+
+	>>>import main.py
+	>>>headers = {"Authorization": "Bearer {}".format("a45a8a4859db0ca7902f4915434fa9ef0943576h")}
+	>>>url = "https://bit.ly/38t3s3b"
+	>>>print("По вашей ссылке прошли {} раза".format(count_clicks(headers, url))
+	По вашей ссылке прошли 4 раза
+
 ## is_bitlink(headers, url)
 
 Функция возвращает True, если ссылка является битлинком, False - если ссылка не является битлинком, вызывает ошибку, если битлинк не принадлежит данному пользователю.
@@ -67,3 +75,11 @@ Python3 должен быть уже установлен. Затем испол
 **headers** - словарь (dict) Python, содержащий токен авторизации в формате `{"Authorization": "Bearer {}".format(AUTH_TOKEN)}`
 
 **url** - "битлинк" в формате `https://bit.ly/38t3s3b`
+
+Пример использования
+
+	>>>import main.py
+	>>>headers = {"Authorization": "Bearer {}".format("a45a8a4859db0ca7902f4915434fa9ef0943576h")}
+	>>>url = "https://bit.ly/38t3s3b"
+	>>>print(is_bitlink(headers, url))
+	True
