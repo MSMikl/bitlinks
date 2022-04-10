@@ -1,14 +1,10 @@
-import os
-import requests
-from urllib.parse import urlparse
-from dotenv import load_dotenv
 import argparse
+import os
+from urllib.parse import urlparse
 
+from dotenv import load_dotenv
+import requests
 
-
-load_dotenv()
-AUTH_TOKEN = os.getenv("BITLY_TOKEN")
-AUTH_HEADERS = {"Authorization": "Bearer {}".format(AUTH_TOKEN)}
 
 
 def shorten_link(headers, url):
@@ -62,6 +58,9 @@ def check_url(url):
 
 
 if __name__ == '__main__':
+    load_dotenv()
+    AUTH_TOKEN = os.getenv("BITLY_TOKEN")
+    AUTH_HEADERS = {"Authorization": "Bearer {}".format(AUTH_TOKEN)}
     parser = argparse.ArgumentParser()
     parser.add_argument('link', help="Ссылка для сокращения или проверки")
     link = parser.parse_args().link
